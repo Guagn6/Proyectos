@@ -1,0 +1,98 @@
+body{/*Tengo la sospecha de que está afectando haber usado el reset.css; Tengo que usar */
+    font-family: 'Roboto Mono', monospace;
+}
+
+*{
+    background: #F3F5fC;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.logo{
+    padding-top: 1rem; 
+    margin: 0% 0% .5rem 2rem;
+    width: 1.5rem;
+}
+
+main{
+    display: flex;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+
+.text-area{
+    border: none;
+    width: 45rem;
+    height: 28rem;
+    color: #0A3871;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    text-transform: lowercase;
+}
+::placeholder{ color: #0A3871;}
+.text-area:focus{
+    outline: none;
+}
+
+.informacion{
+    font-size: .7rem;
+}
+
+.botones{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.boton-encriptar{
+    color: white;
+    background-color: #0A3871;
+    border: solid .15rem #3283e5;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 16rem;
+    height: 3rem;
+    margin-right: 2rem;
+    padding: .5rem 4rem;
+}
+
+.boton-desencriptar{
+    background-color: white;
+    color: #0A3871;
+    border: solid .15rem #3283e5;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 16rem;
+    height: 3rem;
+    padding: .5rem 4rem;
+}
+
+.copiar{
+    background-color: white;
+    color: #0A3871;
+    border: solid .15rem #3283e5;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 16rem;
+    height: 3rem;
+    padding: .5rem 4rem;
+    
+}
+
+.respuesta{
+    width: 31rem;
+    height: 30rem;
+    background: white;
+    background-image: url(pagina-images/Online\ protection_Monochromatic.jpg);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;
+    color: #0A3871;
+
+      
+}
+.respuesta:focus{
+    outline: none;
+}
+
