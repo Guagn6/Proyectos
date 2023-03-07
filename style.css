@@ -1,97 +1,168 @@
-body{/*Tengo la sospecha de que está afectando haber usado el reset.css; Tengo que usar */
-    font-family: 'Roboto Mono', monospace;
+:root{
+    --main-color: #e5e5e5;
 }
 
 *{
-    background: #F3F5fC;
     font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 16px;
+    overflow: hidden;
+    background-color: var(--main-color);
 }
 
-.logo{
-    padding-top: 1rem; 
-    margin: 0% 0% .5rem 2rem;
-    width: 1.5rem;
+body{
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh 5vw 5vh 5vw;
+    background-color:var(main-color);
 }
 
-main{
+/* Header-logo settinggs*/
+.header{
+    background-color: var(main-color);
+}
+.header__logo{
+    background-color: var(main-color);
+    height: 6vh;
+}
+
+/* Main settings*/
+.main{
     display: flex;
-    margin-bottom: 1rem;
-    margin-left: 4rem;
+    background-color: var(main-color);
+    margin: 0vh 10vw 0vh 10vw;
 }
 
-.text-area{
-    border: none;
-    width: 45rem;
-    height: 28rem;
+/*Container*/
+.section-input{
+    width: 45vw;
+    height: 84vh;
     color: #0A3871;
-    margin-top: 3rem;
-    margin-right: 1rem;
     text-transform: lowercase;
+    background: var(main-color);
 }
-::placeholder{ color: #0A3871;}
-.text-area:focus{
+
+/*textarea*/
+.section-input__text{
+    width: 43vw;
+    height: 58vh;
+    padding: 1vh 1vw 1vh 1vw;
+    border: none;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    resize: none;
+    color: #0A3871;
+}
+.section-input__text::placeholder{ 
+    color: #0A3871;
+}
+.section-input__text:focus{
     outline: none;
 }
 
-.informacion{
-    font-size: .7rem;
+/*container*/
+.alert{
+    padding: 5vh 0 0 0;   
 }
 
-.botones{
-    display: flex;
-    margin-top: 1rem;
+.alert__image{
+    display: inline-block;
+    width: 1.5vw;
+    position: absolute;
 }
 
-.boton-encriptar{
-    color: white;
+.alert__text{
+    display:inline-block;
+    font-size: 13px;
+    margin: 4px 1vw 0 1.8vw;
+}
+
+/*buttons*/
+.button-input{
+    margin: 0vh 0vw 3vh 0vw;
+    padding: 1.5vh 0vw 3vh 0vw;
+}
+
+.button-input__encrypt{
+    width: 19vw;
+    height: 6vh;
+    margin: 0vh 2vw 0vh 0vw;
+    color: #fff;
     background-color: #0A3871;
-    border: solid .15rem #3283e5;
     border-radius: 24px;
     cursor: pointer;
-    width: 16rem;
-    height: 3rem;
-    margin-right: 2rem;
-    padding: .5rem 4rem;
 }
 
-.boton-desencriptar{
-    background-color: white;
+.button-input__decrypt{
+    width: 19vw;
+    height: 6vh;
+    margin: 0vh 0vw 0vh 2vw;
+    background-color: #fff;
     color: #0A3871;
-    border: solid .15rem #3283e5;
     border-radius: 24px;
     cursor: pointer;
-    width: 16rem;
-    height: 3rem;
-    padding: .5rem 4rem;
 }
 
-.copiar{
-    background-color: white;
+.section-output{
+    width: 25.3vw;
+    height: 80vh;
+    border-radius: 24px;
     color: #0A3871;
-    border: solid .15rem #3283e5;
-    border-radius: 24px;
-    cursor: pointer;
-    width: 16rem;
-    height: 3rem;
-    padding: .5rem 4rem;  
+    text-transform: lowercase;
+    background: #fff;         /*Eliminar al final*/
 }
 
-.respuesta{
-    width: 31rem;
-    height: 30rem;
-    background: white;
-    background-image: url(pagina-images/Online\ protection_Monochromatic.jpg);
+.section-output__text{
+    width: 23vw;
+    height: 49vh;
+    padding: 1vh 1vw 1vh 1vw;
+    border: white solid;
+    border-radius: 24px;
+    font-size: 1rem;
+    text-transform: lowercase;
+    background: #fff;
+    background-image: url(pagina-images/Muñeco.png);
     background-repeat: no-repeat;
-    border: none;
-    border-radius: 24px;
-    color: #0A3871;
-
-      
+    background-size: 78%;
+    background-position: center;
+    color: #0A3871;  
+    resize: none;
 }
 .respuesta:focus{
     outline: none;
+}
+
+.message__title{
+    padding: 1vh 0 1vh 0;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold; 
+    background-color: #fff;
+}
+
+.message__text{
+    padding: 1vh 0 1vh 0;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold; 
+    background-color: #fff;
+}
+
+.button-output{
+    margin: 3vh 3vw 0vh 3vw;  
+    background-color: #fff;
+}
+
+.button-output__copy{
+    width: 19vw;
+    height: 6vh;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #0A3871;
+    cursor: pointer;
+    
+}
+
+.footer{
+    background-color: #333; 
 }
 

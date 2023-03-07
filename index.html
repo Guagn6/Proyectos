@@ -13,36 +13,35 @@
     </head>
 
     <body>
-        <header>
-            <img class="logo" src="pagina-images/Vector.jpg" alt="Logo de Alura">
+        <header class="header">
+            <img class="header__logo" src="pagina-images/Vector.jpg" alt="Logo de Alura">
         </header>
-
         <main class="main">
-            <section>
-                <textarea class="text-area" placeholder="Ingrese el texto aquí"></textarea>
-                <div>
-                    <p class="informacion">Anote solo letras minúsculas y sin acentos</p>
+            <section class="section-input">
+                <textarea class="section-input__text" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="alert">
+                    <img class="alert__image" src="pagina-images/error-circle-regular-24.png" alt="Imagen de alerta">
+                    <p class="alert__text">Anote solo letras minúsculas y sin acentos</p>
                 </div>
-
-                <div class="botones">
-                    <button class="boton-encriptar">Codificar</button>
-                    <button class="boton-desencriptar">Decodificar</button>
-                </div>
-            </section>
-            <section>
-                <textarea class="respuesta"></textarea> 
-
-                <div>
-                    <button class="copiar">Copiar</button>
+                <div class="button-input">
+                    <button class="button-input__encrypt" onclick="btnCodificar()">Codificar</button>
+                    <button class="button-input__decrypt">Decodificar</button>
                 </div>
             </section>
+
+            <section class="section-output">
+                <textarea class="section-output__text" cols="30" rows="10"></textarea>  
+                <div class="message-container">
+                    <h2 class="message__title">No se ha encontrado ningún mensaje</h2>
+                    <p class="message__text">Ingrese el texto que desea Codificar o decodificar.</p>
+                </div>
+                <div class="button-output">
+                    <button class="button-output__copy">Copiar</button>
+                </div>
+            </section>            
         </main>
-
-        <footer>
-
+        <footer class="footer">
         </footer>
+        <script src="script.js"></script>
     </body>
-
 </html>
-
-<script src="script.js"></script>
