@@ -1,18 +1,20 @@
-:root{
-    --main-color: #e5e5e5;
-}
 
 *{
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
     overflow: hidden;
+    box-sizing: border-box;
     background-color: var(--main-color);
+}
+
+:root{
+    --main-color: #e5e5e5;
 }
 
 body{
     width: 90vw;
     height: 90vh;
-    margin: 5vh 5vw 5vh 5vw;
+    margin: 5vh auto;
     background-color:var(main-color);
 }
 
@@ -21,148 +23,354 @@ body{
     background-color: var(main-color);
 }
 .header__logo{
+    position: static;
     background-color: var(main-color);
-    height: 6vh;
+    height: 6%;
 }
 
 /* Main settings*/
-.main{
+main{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(main-color);
-    margin: 0vh 10vw 0vh 10vw;
+    margin: 0vh 5vw; /*Este margen se quitará para el @media responsive*/
 }
 
 /*Container*/
-.section-input{
-    width: 45vw;
-    height: 84vh;
+.section{
+    height: 90vh;
     color: #0A3871;
     text-transform: lowercase;
+    overflow: auto;
     background: var(main-color);
 }
 
+
 /*textarea*/
-.section-input__text{
-    width: 43vw;
-    height: 58vh;
-    padding: 1vh 1vw 1vh 1vw;
+.input__text{
+    width: 50vw;
+    height: 60vh;
+    padding: 1vh 1vw;
     border: none;
     font-size: 1.5rem;
     text-transform: lowercase;
     resize: none;
     color: #0A3871;
+    overflow-y: auto;
 }
-.section-input__text::placeholder{ 
+.input__text::placeholder{ 
     color: #0A3871;
 }
-.section-input__text:focus{
+.input__text:focus{
     outline: none;
 }
 
 /*container*/
-.alert{
-    padding: 5vh 0 0 0;   
+.alert-container{
+    height: 10vh;
+    padding: 2vh 0;
+    margin-left: 2vw;
 }
 
-.alert__image{
+.alert__img{
     display: inline-block;
-    width: 1.5vw;
-    position: absolute;
+    width: 15px;
+    position: relative;
+    margin-top: 5vh;
+    top: 2px;
 }
 
-.alert__text{
+.alert__img+p{
     display:inline-block;
     font-size: 13px;
-    margin: 4px 1vw 0 1.8vw;
 }
 
 /*buttons*/
-.button-input{
-    margin: 0vh 0vw 3vh 0vw;
-    padding: 1.5vh 0vw 3vh 0vw;
+.button-input-container{
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    justify-content: space-between;
 }
 
-.button-input__encrypt{
-    width: 19vw;
+.button-encrypt{
+    width: 24vw;
     height: 6vh;
-    margin: 0vh 2vw 0vh 0vw;
+    margin-left: 2vw;
     color: #fff;
     background-color: #0A3871;
     border-radius: 24px;
     cursor: pointer;
 }
 
-.button-input__decrypt{
-    width: 19vw;
+.button-decrypt{
+    width: 24vw;
     height: 6vh;
-    margin: 0vh 0vw 0vh 2vw;
+    margin-left: 2vw;
     background-color: #fff;
     color: #0A3871;
     border-radius: 24px;
     cursor: pointer;
 }
 
-.section-output{
-    width: 25.3vw;
-    height: 80vh;
+.output{
+    width: 25vw;
+    height: 83vh;
     border-radius: 24px;
     color: #0A3871;
     text-transform: lowercase;
-    background: #fff;         /*Eliminar al final*/
+    background: #fff;
 }
 
-.section-output__text{
-    width: 23vw;
-    height: 49vh;
-    padding: 1vh 1vw 1vh 1vw;
-    border: white solid;
+.limite{
+    height: 1px;
+    background: #fff;
+}
+
+.output__text{
+    width: 100%;
+    height: 15%;
+    padding: 1vh 1vw;
+    border: none;
     border-radius: 24px;
-    font-size: 1rem;
+    font-size: 16px;
     text-transform: lowercase;
     background: #fff;
-    background-image: url(pagina-images/Muñeco.png);
-    background-repeat: no-repeat;
-    background-size: 78%;
-    background-position: center;
     color: #0A3871;  
     resize: none;
+    overflow-y: auto;
+    transition: 1.5s ease-in-out;
 }
-.respuesta:focus{
+.output__text:focus{
     outline: none;
 }
 
-.message__title{
-    padding: 1vh 0 1vh 0;
+.img-output{
+    display: block;
+    background-color: #fff;
+    margin: 0 auto;
+    transition: 1.5s ease-in-out;
+}
+
+.message-container{
+    display: block;
+    height: 20vh;
+    background-color: #fff;
+}
+
+.message__title, .message__text{
+    margin-top: 3vh;
+    padding-bottom: 1vh;
     font-size: 1.5rem;
     text-align: center;
     font-weight: bold; 
     background-color: #fff;
 }
 
-.message__text{
-    padding: 1vh 0 1vh 0;
+.message__title+p{
     font-size: 1rem;
-    text-align: center;
-    font-weight: bold; 
+}
+
+.button-output-container{
+    display: flex;
+    height: 10vh;
+    margin: 0 1vw;
+    justify-content: center;  
     background-color: #fff;
 }
 
-.button-output{
-    margin: 3vh 3vw 0vh 3vw;  
-    background-color: #fff;
-}
-
-.button-output__copy{
-    width: 19vw;
+.copy-button{
+    display: none;
+    width: 23vw;
     height: 6vh;
     border-radius: 24px;
     background-color: #fff;
     color: #0A3871;
-    cursor: pointer;
+    cursor: pointer;    
+}
+
+
+@media screen and (max-width: 1100px){
+    .message__title{
+        font-size: 1.3rem;
+    } 
+    .message__title+p{
+        font-size: .8rem;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width: 900px){
+    *{
+        overflow-y: auto;
+    }
+
+    body{
+        width: 95%;
+        height: auto;
+        margin: 3% 3%;
+    }
+
+    main{
+        align-items: center;
+        margin: 0 auto;
+    } 
+
+    .section{
+        width: 80%;
+        height: 45%;
+        margin: 0 auto;
+    }
+
+    .input__text{
+        width: 100%;
+        height: 55vh;
+        padding-top: 1%; 
+        font-size: 1.2rem;
+    }
+
+    .alert-container{
+        height: 3%;
+        padding: 1% 0;
+        margin-left: 0;
+    }
     
+    .alert__img{
+        margin-top: 0;
+        top: 2px;
+    }
+    
+    .alert__img+p{
+        font-size: 12px;
+    }
+    
+    /*buttons*/
+    .button-input-container{
+        height: 5vh;
+        margin-bottom: 2%;
+    }
+
+    .button-encrypt{
+        width: 37vw;
+        height: 5vh;
+        margin-left: 0;
+    }
+
+    .button-decrypt{
+        width: 37vw;
+        height: 5vh;
+        margin-left: 0;
+    }
+
+    .output{
+        width: 80vw;
+        height: 25vh;
+    }
+
+    .output__text{
+        width: 80vw;
+        height: 25%;
+        background-image: none;/*Probablemente se necesite hacer modificaciones JS*/
+    }
+
+    .img-output{
+        display: none;
+    }
+
+    .message-container{
+        height: 8vh;
+        background-color: #fff;
+    }
+
+    .message__title, .message__text{
+        margin-top: 0;
+        padding-bottom: 1vh;
+        font-size: 1.2rem;
+    }
+
+    .message__title+p{
+        font-size: .9rem;
+        padding-bottom: 2vh;
+    }
+
+    .button-output-container{
+        height: 5vh;
+        margin: 0 0;  
+        background-color: #fff;
+    }
+
+    .copy-button{
+        width: 60vw;
+        height: 5vh;
+    }
 }
 
-.footer{
-    background-color: #333; 
-}
+/*Cellphone*/
+@media screen and (max-width: 560px){
 
+    .input__text{
+        width: 100%;
+        height: 40vh;
+        padding-top: 1%; 
+        font-size: 1.2rem;
+    }
+
+    .alert-container{
+        height: 3%;
+        padding: 1% 0;
+        margin-left: 0;
+    }
+    
+    .alert__img{
+        margin-top: 0;
+        top: 2px;
+    }
+    
+    .alert__img+p{
+        font-size: 12px;
+    }
+    
+    /*buttons*/
+    .button-input-container{
+        flex-direction: column;
+        height: 11vh;
+        margin-bottom: 2%;
+        align-items: center;
+    }
+
+    .button-encrypt{
+        width: 76vw;
+    }
+
+    .button-decrypt{
+        width: 76vw;
+    }
+
+    .output{
+        height: 34vh;
+    }
+
+    .output__text{
+        height: 18vh;
+    }
+
+    .message-container{
+        height: 10vh;
+        background-color: #fff;
+    }
+
+    .message__title, .message__text{
+        font-size: 1.1rem;
+    }
+
+    .message__title+p{
+        font-size: .8rem;
+        margin-bottom: 1vh;
+        padding-bottom: 1vh;
+    }
+
+    .copy-button{
+        width: 65vw;
+    }
+}
